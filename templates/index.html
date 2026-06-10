@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Mask Detection</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        img{
+            width:300px;
+            margin-top:20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>Face Mask Classification</h1>
+
+<form method="POST" enctype="multipart/form-data">
+
+    <input type="file" name="file" required>
+
+    <br><br>
+
+    <button type="submit">
+        Classify Image
+    </button>
+
+</form>
+
+{% if image_path %}
+    <h3>Uploaded Image</h3>
+
+    <img src="{{ image_path }}">
+{% endif %}
+
+{% if prediction %}
+    <h2>Prediction:</h2>
+    <h1>{{ prediction }}</h1>
+{% endif %}
+
+</body>
+</html>
